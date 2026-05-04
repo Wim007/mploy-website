@@ -6,8 +6,8 @@
   --donker-zacht:  #232323;
   --zand:          #F3EFE6;
   --wit:           #FAF9F6;
-  --lime:          #C7F000;
-  --olijf:         #97B800;
+  --lime:          #ff6a00;
+  --olijf:         #cc4f00;
   --grijs:         #6F6F6F;
   --grijs-licht:   #AEAEAE;
 
@@ -113,10 +113,12 @@ p  { font-size: 1rem; line-height: 1.7; }
 }
 
 .nav__logo {
-  font-size: 1.45rem;
-  font-weight: 800;
-  color: var(--lime);
-  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+}
+.nav__logo img {
+  height: 38px;
+  width: auto;
 }
 
 .nav__links {
@@ -535,11 +537,12 @@ p  { font-size: 1rem; line-height: 1.7; }
 }
 
 .footer__logo {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--lime);
-  letter-spacing: 0.04em;
-  margin-bottom: 0.5rem;
+  display: block;
+  margin-bottom: 0.8rem;
+}
+.footer__logo img {
+  height: 32px;
+  width: auto;
 }
 
 .footer__sub { font-size: 0.85rem; line-height: 1.5; }
@@ -575,7 +578,7 @@ p  { font-size: 1rem; line-height: 1.7; }
 .quote-blok {
   border-left: 4px solid var(--lime);
   padding: 1.2rem 1.6rem;
-  background: rgba(199,240,0,0.05);
+  background: rgba(255,106,0,0.05);
   border-radius: 0 var(--radius) var(--radius) 0;
   max-width: var(--max-breedte);
   margin: 0 auto;
