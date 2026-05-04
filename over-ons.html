@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Strategisch. Persoonlijk. Recht door zee. Wij helpen werkgevers grip krijgen op hun personeel — structureel." />
+  <title>Over ons — M'PLOY</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── HERO ── */
+    .hero-over {
+      background: var(--donker);
+      padding: 0;
+    }
+    .hero-over__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 480px;
+    }
+    .hero-over__tekst {
+      padding: 5rem 4rem 5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 600px;
+      margin-left: auto;
+    }
+    .hero-over__tekst h1 {
+      color: var(--zand);
+      margin-bottom: 1.2rem;
+    }
+    .hero-over__tekst h1 .lime { color: var(--lime); }
+    .hero-over__tekst p {
+      color: var(--grijs-licht);
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .hero-over__foto {
+      background: var(--donker-zacht);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .hero-over__foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-over__foto-placeholder {
+      color: rgba(255,255,255,.12);
+      font-size: .9rem;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      padding: 5rem 2rem;
+      background: var(--wit);
+    }
+    .intro__inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .intro h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--donker);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    .intro p {
+      color: #4a4a4a;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+    }
+    .intro p:last-child { margin-bottom: 0; }
+
+    /* ── NO CRAB ── */
+    .no-crab {
+      background: var(--donker);
+      padding: 5rem 2rem;
+    }
+    .no-crab__kicker {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--lime);
+      margin-bottom: .6rem;
+      display: block;
+    }
+    .no-crab h2 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      color: var(--zand);
+      text-transform: uppercase;
+      margin-bottom: .5rem;
+      letter-spacing: -.01em;
+    }
+    .no-crab__sub {
+      color: var(--grijs);
+      font-size: 1rem;
+      margin-bottom: 3rem;
+    }
+    .no-crab__layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      max-width: var(--max-breedte);
+      margin: 0 auto 1.2rem;
+    }
+    .nc-foto {
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--donker-zacht);
+      position: relative;
+      min-height: 320px;
+    }
+    .nc-foto img { width: 100%; height: 100%; object-fit: cover; }
+    .nc-foto__label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 2rem 1.5rem 1.5rem;
+      background: linear-gradient(to top, rgba(21,21,21,.95) 0%, transparent 100%);
+    }
+    .nc-foto__label h3 { color: var(--zand); font-size: 1.1rem; margin-bottom: .25rem; }
+    .nc-foto__label p  { color: var(--grijs-licht); font-size: .875rem; }
+    .nc-cards { display: flex; flex-direction: column; gap: 1rem; }
+    .nc-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 10px;
+      padding: 1.4rem 1.5rem;
+    }
+    .nc-card__vink {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: rgba(199,240,0,.15);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: .8rem;
+    }
+    .nc-card__vink svg { width: 14px; height: 14px; stroke: var(--lime); }
+    .nc-card h3 { font-size: .97rem; font-weight: 700; color: var(--zand); margin-bottom: .4rem; }
+    .nc-card p  { font-size: .875rem; color: var(--grijs-licht); line-height: 1.6; }
+    .nc-card--vol {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 10px;
+      padding: 1.4rem 1.5rem;
+      max-width: var(--max-breedte);
+      margin: 0 auto;
+    }
+    .nc-card--vol h3 { font-size: .97rem; font-weight: 700; color: var(--zand); margin-bottom: .4rem; }
+    .nc-card--vol p  { font-size: .875rem; color: var(--grijs-licht); line-height: 1.6; }
+
+    /* ── TEAM ── */
+    .team {
+      padding: 5rem 2rem;
+      background: var(--wit);
+    }
+    .team__kop {
+      max-width: var(--max-breedte);
+      margin: 0 auto 3.5rem;
+    }
+    .team__kop .label { color: var(--donker); margin-bottom: .5rem; display: block; }
+    .team__kop h2 { color: var(--donker); }
+
+    .teamlid {
+      max-width: var(--max-breedte);
+      margin: 0 auto 2rem;
+      border-radius: 16px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 320px;
+      background: var(--donker);
+      position: relative;
+    }
+    .teamlid__nr {
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--lime);
+      color: var(--donker);
+      font-weight: 800;
+      font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 10;
+      box-shadow: 0 4px 16px rgba(199,240,0,.3);
+    }
+    .teamlid.foto-rechts .teamlid__nr { right: -21px; }
+    .teamlid.foto-links  .teamlid__nr { left: -21px; }
+
+    .teamlid__content {
+      padding: 2.8rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .teamlid.foto-rechts .teamlid__content { order: 1; }
+    .teamlid.foto-rechts .teamlid__foto    { order: 2; }
+    .teamlid.foto-links  .teamlid__content { order: 2; }
+    .teamlid.foto-links  .teamlid__foto    { order: 1; }
+
+    .teamlid__naam {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--lime);
+      margin-bottom: 1.4rem;
+    }
+    .kenmerken { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.6rem; }
+    .kenmerk__kop  { display: flex; align-items: center; gap: .5rem; margin-bottom: .15rem; }
+    .kenmerk__icon { font-size: .95rem; }
+    .kenmerk__naam { font-weight: 700; color: var(--zand); font-size: .95rem; }
+    .kenmerk__tekst { color: var(--grijs-licht); font-size: .875rem; line-height: 1.55; padding-left: 1.5rem; }
+
+    .lid-email {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: var(--lime);
+      color: var(--donker);
+      padding: .6rem 1.2rem;
+      border-radius: 100px;
+      font-size: .875rem;
+      font-weight: 700;
+      width: fit-content;
+      transition: background .18s;
+    }
+    .lid-email:hover { background: var(--olijf); }
+    .lid-email svg { width: 15px; height: 15px; stroke: var(--donker); }
+
+    .teamlid__foto {
+      overflow: hidden;
+      background: var(--donker-zacht);
+      min-height: 280px;
+    }
+    .teamlid__foto img { width: 100%; height: 100%; object-fit: cover; }
+    .teamlid__foto-placeholder {
+      width: 100%; height: 100%; min-height: 280px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 5rem; font-weight: 800;
+      color: rgba(255,255,255,.08);
+    }
+
+    /* ── FLOATING CTA ── */
+    .floating-cta {
+      position: fixed;
+      bottom: 1.8rem; right: 1.8rem;
+      background: var(--donker-zacht);
+      border: 1px solid #333;
+      border-radius: 14px;
+      padding: 1rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,.4);
+      z-index: 200;
+      max-width: 290px;
+    }
+    .floating-cta__avatar {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--donker);
+      overflow: hidden; flex-shrink: 0;
+      border: 2px solid var(--lime);
+    }
+    .floating-cta__avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .floating-cta h4 { font-size: .82rem; font-weight: 700; color: var(--lime); margin-bottom: .4rem; }
+    .floating-cta__links { list-style: none; padding: 0; display: flex; flex-direction: column; gap: .3rem; }
+    .floating-cta__links li { font-size: .78rem; color: var(--grijs-licht); display: flex; align-items: center; gap: .4rem; }
+    .floating-cta__links a { color: inherit; transition: color .15s; }
+    .floating-cta__links a:hover { color: var(--lime); }
+    .floating-cta__links svg { width: 12px; height: 12px; stroke: var(--lime); flex-shrink: 0; }
+    .floating-cta__sluit {
+      position: absolute; top: -10px; right: -10px;
+      width: 22px; height: 22px;
+      border-radius: 50%;
+      background: var(--donker);
+      border: 1px solid #333;
+      cursor: pointer;
+      color: var(--grijs);
+      font-size: .75rem;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .floating-cta__sluit:hover { color: var(--lime); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .hero-over__inner { grid-template-columns: 1fr; }
+      .hero-over__foto  { min-height: 260px; }
+      .hero-over__tekst { padding: 3.5rem 2rem; margin: 0; max-width: 100%; }
+      .no-crab__layout  { grid-template-columns: 1fr; }
+      .nc-foto { min-height: 220px; }
+      .teamlid { grid-template-columns: 1fr; }
+      .teamlid.foto-rechts .teamlid__foto,
+      .teamlid.foto-links  .teamlid__foto  { order: 1 !important; min-height: 220px; }
+      .teamlid.foto-rechts .teamlid__content,
+      .teamlid.foto-links  .teamlid__content { order: 2 !important; }
+      .teamlid.foto-rechts .teamlid__nr,
+      .teamlid.foto-links  .teamlid__nr { top: 220px; left: 50%; right: auto; transform: translate(-50%, -50%); }
+    }
+    @media (max-width: 480px) {
+      .teamlid__content { padding: 2rem 1.5rem; }
+      .floating-cta { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo">M'PLOY</a>
+      <div class="nav__links">
+        <a href="personeel-vinden.html">Personeel vinden</a>
+        <a href="werkgeversmerk-bouwen.html">Werkgeversmerk bouwen</a>
+        <a href="over-ons.html" class="actief">Over ons</a>
+        <a href="contact.html" class="btn btn-lime">Contact</a>
+      </div>
+      <button class="nav__hamburger" aria-label="Menu openen" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="personeel-vinden.html">Personeel vinden</a>
+      <a href="werkgeversmerk-bouwen.html">Werkgeversmerk bouwen</a>
+      <a href="over-ons.html">Over ons</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb container">
+    <a href="index.html">Home</a>
+    <span>&rsaquo;</span>
+    Over ons
+  </div>
+
+  <!-- HERO -->
+  <section class="hero-over">
+    <div class="hero-over__inner">
+      <div class="hero-over__tekst">
+        <p class="label" style="margin-bottom: 1rem;">Wij zijn M'PLOY</p>
+        <div class="divisor"></div>
+        <h1>Cut the crab.<br><span class="lime">This is us.</span></h1>
+        <p>Wij maken werkgevers onweerstaanbaar. Geen omwegen, geen groot-bureau-gedoe. Gewoon eerlijk werken aan iets wat klopt.</p>
+        <a href="contact.html" class="btn btn-lime btn-lg">Plan een afspraak</a>
+      </div>
+      <div class="hero-over__foto">
+        <img src="images/team/mploy-team.jpg" alt="Het team van M'PLOY"
+          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=hero-over__foto-placeholder>Teamfoto<br><small style=opacity:.5>images/team/mploy-team.jpg</small></div>'">
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <div class="intro__inner">
+      <h2>Strategisch. Persoonlijk. Recht door zee.</h2>
+      <p>Wij helpen werkgevers grip krijgen op hun personeel — structureel. Geen quick fixes, maar een systeem dat altijd aanstaat: <strong>vinden, binden en employer branding</strong> in een.</p>
+      <p>Met data, zichtbaarheid en lef zorgen we dat je niet jaagt, maar aantrekt.</p>
+      <p>M'PLOY is de partner voor werkgevers die personeelstekorten structureel willen oplossen. We bouwen niet alleen teams, maar ook duurzaamheid, continuïteit en groei.</p>
+    </div>
+  </section>
+
+  <!-- NO CRAB, JUST FACTS -->
+  <section class="no-crab">
+    <div class="container">
+      <span class="no-crab__kicker">Wat je mag verwachten</span>
+      <h2>No crab, just facts</h2>
+      <p class="no-crab__sub">Zo werken wij</p>
+
+      <div class="no-crab__layout">
+        <div class="nc-foto">
+          <img src="images/team/mploy-aanpak.jpg" alt="Recht door zee"
+            onerror="this.onerror=null; this.style.display='none'">
+          <div class="nc-foto__label">
+            <h3>Recht door zee</h3>
+            <p>Transparant, eerlijk en zonder omwegen.</p>
+          </div>
+        </div>
+        <div class="nc-cards">
+          <div class="nc-card">
+            <div class="nc-card__vink">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h3>Teamwork met een bite</h3>
+            <p>Geen bureau, maar een partner die naast je staat — scherp, eerlijk en soms lekker lastig.</p>
+          </div>
+          <div class="nc-card">
+            <div class="nc-card__vink">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h3>Een plan dat werkt</h3>
+            <p>Sterke branding, slimme content en een werken-bij aanpak die converteert — jouw organisatie wordt onweerstaanbaar voor kandidaten.</p>
+          </div>
+          <div class="nc-card">
+            <div class="nc-card__vink">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h3>Maatwerk en innovatie</h3>
+            <p>Slimme strategie gecombineerd met eigentijdse tools en frisse content die jouw verhaal versterkt.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="nc-card--vol">
+        <div class="nc-card__vink" style="margin-bottom:.6rem;">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" width="14" height="14"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" stroke="var(--lime)"/></svg>
+        </div>
+        <h3>Duurzaam werkgeverschap</h3>
+        <p>We helpen je niet alleen aan nieuwe mensen, maar vooral aan het behouden ervan.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team">
+    <div class="team__kop">
+      <span class="label">Het team</span>
+      <h2>Dit zijn wij</h2>
+    </div>
+
+    <!-- Sabine -->
+    <div class="teamlid foto-rechts">
+      <div class="teamlid__nr">1</div>
+      <div class="teamlid__content">
+        <div class="teamlid__naam">Sabine</div>
+        <ul class="kenmerken">
+          <li>
+            <div class="kenmerk__kop"><span class="kenmerk__icon">&#128172;</span><span class="kenmerk__naam">Hollandse eerlijkheid</span></div>
+            <p class="kenmerk__tekst">Recht door zee, oprecht en duidelijk in communicatie.</p>
+          </li>
+          <li>
+            <div class="kenmerk__kop"><span class="kenmerk__icon">&#128279;</span><span class="kenmerk__naam">Verbinding</span></div>
+            <p class="kenmerk__tekst">Verbindt mensen én bedrijven met gemak en oprechte interesse.</p>
+          </li>
+          <li>
+            <div class="kenmerk__kop"><span class="kenmerk__icon">&#128200;</span><span class="kenmerk__naam">Resultaatgericht</span></div>
+            <p class="kenmerk__tekst">Altijd scherp op impact, met focus én gevoel voor de relatie.</p>
+          </li>
+        </ul>
+        <a href="mailto:sabine@mploy.nu" class="lid-email">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          sabine@mploy.nu
+        </a>
+      </div>
+      <div class="teamlid__foto">
+        <img src="images/team/sabine.jpg" alt="Sabine"
+          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=teamlid__foto-placeholder>S</div>'">
+      </div>
+    </div>
+
+    <!-- Ayla -->
+    <div class="teamlid foto-links">
+      <div class="teamlid__nr">2</div>
+      <div class="teamlid__foto">
+        <img src="images/team/ayla.jpg" alt="Ayla"
+          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=teamlid__foto-placeholder>A</div>'">
+      </div>
+      <div class="teamlid__content">
+        <div class="teamlid__naam">Ayla</div>
+        <ul class="kenmerken">
+          <li>
+            <div class="kenmerk__kop"><span class="kenmerk__icon">&#128522;</span><span class="kenmerk__naam">Enthousiasme</span></div>
+            <p class="kenmerk__tekst">Energieke aanpak, denkt mee en voert door. Haar enthousiasme werkt aanstekelijk.</p>
+          </li>
+          <li>
+            <div class="kenmerk__kop"><span class="kenmerk__icon">&#9999;&#65039;</span><span class="kenmerk__naam">Creativiteit</span></div>
+            <p class="kenmerk__tekst">Bedenkt originele oplossingen die opvallen én werken.</p>
+          </li>
+          <li>
+            <div class="kenmerk__kop"><span class="kenmerk__icon">&#128101;</span><span class="kenmerk__naam">Mensgericht denken</span></div>
+            <p class="kenmerk__tekst">Ziet de mens achter het werk — en speelt daarop in.</p>
+          </li>
+        </ul>
+        <a href="mailto:ayla@mploy.nu" class="lid-email">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          ayla@mploy.nu
+        </a>
+      </div>
+    </div>
+
+    <!-- Anneke -->
+    <div class="teamlid foto-rechts">
+      <div class="teamlid__nr">3</div>
+      <div class="teamlid__content">
+        <div class="teamlid__naam">Anneke</div>
+        <ul class="kenmerken">
+          <li>
+            <div class="kenmerk__kop"><span class="kenmerk__icon">&#128279;</span><span class="kenmerk__naam">Perfecte match</span></div>
+            <p class="kenmerk__tekst">Matcht niet alleen mensen aan organisaties — haar outfits kloppen ook altijd.</p>
+          </li>
+          <li>
+            <div class="kenmerk__kop"><span class="kenmerk__icon">&#128101;</span><span class="kenmerk__naam">Verbinder</span></div>
+            <p class="kenmerk__tekst">Verbindt organisatiebehoeften aan slimme acties.</p>
+          </li>
+          <li>
+            <div class="kenmerk__kop"><span class="kenmerk__icon">&#9881;&#65039;</span><span class="kenmerk__naam">Structuur &amp; inzicht</span></div>
+            <p class="kenmerk__tekst">Creëert rust, overzicht en richting.</p>
+          </li>
+        </ul>
+        <a href="mailto:anneke@mploy.nu" class="lid-email">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          anneke@mploy.nu
+        </a>
+      </div>
+      <div class="teamlid__foto">
+        <img src="images/team/anneke.jpg" alt="Anneke"
+          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=teamlid__foto-placeholder>A</div>'">
+      </div>
+    </div>
+
+    <!-- Lotje -->
+    <div class="teamlid foto-links">
+      <div class="teamlid__nr">4</div>
+      <div class="teamlid__foto">
+        <img src="images/team/lotje.jpg" alt="Lotje"
+          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=teamlid__foto-placeholder>L</div>'">
+      </div>
+      <div class="teamlid__content">
+        <div class="teamlid__naam">Lotje</div>
+        <ul class="kenmerken">
+          <li>
+            <div class="kenmerk__kop"><span class="kenmerk__icon">&#128065;</span><span class="kenmerk__naam">Scherpe blik</span></div>
+            <p class="kenmerk__tekst">Ziet direct waar het beter kan en spreekt dat uit — helder, eerlijk en to the point.</p>
+          </li>
+          <li>
+            <div class="kenmerk__kop"><span class="kenmerk__icon">&#128172;</span><span class="kenmerk__naam">Eerlijk met een knipoog</span></div>
+            <p class="kenmerk__tekst">Combineert directe feedback met humor, waardoor confronterend ineens lekker werkbaar wordt.</p>
+          </li>
+          <li>
+            <div class="kenmerk__kop"><span class="kenmerk__icon">&#9889;</span><span class="kenmerk__naam">Actiegericht</span></div>
+            <p class="kenmerk__tekst">Geen gepraat om het praten. Lotje wil beweging — en zorgt dat het er komt.</p>
+          </li>
+        </ul>
+        <a href="mailto:lotje@mploy.nu" class="lid-email">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          lotje@mploy.nu
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-sectie">
+    <h2>Genoeg gepraat.<br>Tijd voor actie.</h2>
+    <p>Geen verplichtingen. Gewoon kijken of we iets voor elkaar kunnen betekenen.</p>
+    <a href="contact.html" class="btn btn-lime btn-lg">Plan een afspraak &rarr;</a>
+  </section>
+
+  <!-- FLOATING CTA -->
+  <div class="floating-cta" id="floatingCta">
+    <button class="floating-cta__sluit" onclick="document.getElementById('floatingCta').style.display='none'" aria-label="Sluiten">&#10005;</button>
+    <div class="floating-cta__avatar">
+      <img src="images/team/may.jpg" alt="May" onerror="this.style.display='none'">
+    </div>
+    <div>
+      <h4>Genoeg gepraat. Tijd voor actie.</h4>
+      <ul class="floating-cta__links">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.83a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          <a href="tel:0850791781">085 079 1781</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:may@mploy.nu">may@mploy.nu</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <a href="contact.html">Plan een afspraak</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__logo">M'PLOY</div>
+        <p class="footer__sub">
+          Slim vinden. Echt binden.<br>
+          Markt 14, 5581 GK Waalre<br>
+          <a href="mailto:may@mploy.nu" style="color:var(--grijs-licht);">may@mploy.nu</a> &middot;
+          <a href="tel:0850791781" style="color:var(--grijs-licht);">085 079 1781</a><br>
+          <span style="opacity:.5; font-size:.8rem;">KvK 95835571</span>
+        </p>
+      </div>
+      <nav class="footer__nav">
+        <a href="personeel-vinden.html">Personeel vinden</a>
+        <a href="werkgeversmerk-bouwen.html">Werkgeversmerk bouwen</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      &copy; 2026 M'PLOY — Hire right!
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
