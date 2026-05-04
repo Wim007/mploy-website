@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Neem contact op met M'PLOY. Geen verplichtingen — gewoon kijken of we iets voor elkaar kunnen betekenen." />
+  <title>Contact — M'PLOY</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 5rem;
+      max-width: var(--max-breedte);
+      margin: 0 auto;
+      padding: 0 2rem;
+      align-items: start;
+    }
+
+    .contact-info h2 { margin-bottom: 1.2rem; }
+    .contact-info p  { color: var(--grijs-licht); font-size: 1rem; line-height: 1.7; margin-bottom: 2rem; }
+
+    .contact-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: 2rem;
+    }
+
+    .contact-detail__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact-detail__item__icoon {
+      font-size: 1.2rem;
+      margin-top: 2px;
+    }
+
+    .contact-detail__item__tekst {
+      font-size: 0.95rem;
+      color: var(--grijs-licht);
+      line-height: 1.5;
+    }
+
+    .contact-detail__item__tekst strong {
+      display: block;
+      color: var(--zand);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.2rem;
+    }
+
+    .form-card {
+      background: var(--donker-zacht);
+      border: 1px solid #2e2e2e;
+      border-radius: 10px;
+      padding: 2.8rem;
+    }
+
+    .form-card h3 {
+      color: var(--zand);
+      font-size: 1.3rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .form-card .form-sub {
+      color: var(--grijs);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+      color: var(--lime);
+    }
+
+    .form-success .succes-icoon {
+      font-size: 2.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .form-success p { color: var(--grijs-licht); margin-top: 0.5rem; }
+
+    @media (max-width: 768px) {
+      .contact-wrapper { grid-template-columns: 1fr; gap: 2.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .form-card { padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container nav__inner">
+      <a href="index.html" class="nav__logo">M'PLOY</a>
+      <div class="nav__links">
+        <a href="personeel-vinden.html">Personeel vinden</a>
+        <a href="werkgeversmerk-bouwen.html">Werkgeversmerk bouwen</a>
+        <a href="contact.html" class="btn btn-lime actief">Contact</a>
+      </div>
+      <button class="nav__hamburger" aria-label="Menu openen" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="personeel-vinden.html">Personeel vinden</a>
+      <a href="werkgeversmerk-bouwen.html">Werkgeversmerk bouwen</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb container">
+    <a href="index.html">Home</a>
+    <span>&rsaquo;</span>
+    Contact
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" style="padding-bottom: 4rem; text-align: left;">
+    <div class="container">
+      <p class="label" style="margin-bottom: 1rem; display: block;">Neem contact op</p>
+      <div class="divisor"></div>
+      <h1>Genoeg gepraat.<br><span class="lime">Tijd voor actie.</span></h1>
+      <p class="hero__sub" style="margin-left: 0; margin-top: 1.4rem;">
+        Geen verplichtingen. Gewoon kijken of we iets voor elkaar kunnen betekenen.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTIE -->
+  <section class="sectie sectie--donker" style="padding-top: 4rem; padding-bottom: 5rem;">
+    <div class="contact-wrapper">
+
+      <!-- Info links -->
+      <div class="contact-info">
+        <h2 style="color: var(--zand);">We luisteren<br>eerst. Dan pas.</h2>
+        <p>
+          Vertel ons wat er speelt. Wij kijken eerlijk naar je situatie en zeggen je wat we denken dat werkt —
+          en wat niet.
+        </p>
+
+        <div class="contact-detail">
+          <div class="contact-detail__item">
+            <div class="contact-detail__item__icoon">&#128205;</div>
+            <div class="contact-detail__item__tekst">
+              <strong>Locatie</strong>
+              Nederland
+            </div>
+          </div>
+          <div class="contact-detail__item">
+            <div class="contact-detail__item__icoon">&#9993;</div>
+            <div class="contact-detail__item__tekst">
+              <strong>E-mail</strong>
+              info@mploy.nl
+            </div>
+          </div>
+          <div class="contact-detail__item">
+            <div class="contact-detail__item__icoon">&#128222;</div>
+            <div class="contact-detail__item__tekst">
+              <strong>Telefoon</strong>
+              +31 (0)85 000 00 00
+            </div>
+          </div>
+          <div class="contact-detail__item">
+            <div class="contact-detail__item__icoon">&#128337;</div>
+            <div class="contact-detail__item__tekst">
+              <strong>Reactietijd</strong>
+              Binnen 1 werkdag
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 3rem; padding: 1.6rem; background: rgba(199,240,0,0.07); border: 1px solid rgba(199,240,0,0.15); border-radius: var(--radius);">
+          <p style="color: var(--grijs-licht); font-size: 0.9rem; margin: 0;">
+            <span style="color: var(--lime); font-weight: 700;">Hire right!</span><br>
+            Meer dan 10 jaar ervaring in arbeidsmarktcommunicatie voor logistiek en maakindustrie.
+          </p>
+        </div>
+      </div>
+
+      <!-- Formulier rechts -->
+      <div class="form-card">
+        <h3>Stuur ons een bericht</h3>
+        <p class="form-sub">Vul het formulier in en we nemen zo snel mogelijk contact met je op.</p>
+
+        <form class="form" id="contactForm" onsubmit="verstuurForm(event)">
+          <div class="form-row">
+            <div class="form-veld">
+              <label for="voornaam">Voornaam *</label>
+              <input type="text" id="voornaam" name="voornaam" placeholder="Jan" required />
+            </div>
+            <div class="form-veld">
+              <label for="achternaam">Achternaam *</label>
+              <input type="text" id="achternaam" name="achternaam" placeholder="de Vries" required />
+            </div>
+          </div>
+
+          <div class="form-veld">
+            <label for="bedrijf">Bedrijf *</label>
+            <input type="text" id="bedrijf" name="bedrijf" placeholder="Naam van je bedrijf" required />
+          </div>
+
+          <div class="form-veld">
+            <label for="email">E-mailadres *</label>
+            <input type="email" id="email" name="email" placeholder="jan@bedrijf.nl" required />
+          </div>
+
+          <div class="form-veld">
+            <label for="telefoon">Telefoonnummer</label>
+            <input type="tel" id="telefoon" name="telefoon" placeholder="+31 6 12345678" />
+          </div>
+
+          <div class="form-veld">
+            <label for="vraagstuk">Waar gaat het over? *</label>
+            <select id="vraagstuk" name="vraagstuk" required>
+              <option value="" disabled selected>Kies een onderwerp</option>
+              <option value="personeel-vinden">Personeel vinden / werving</option>
+              <option value="employer-branding">Werkgeversmerk bouwen / employer branding</option>
+              <option value="beide">Beide — ik wil de opties bespreken</option>
+              <option value="anders">Anders</option>
+            </select>
+          </div>
+
+          <div class="form-veld">
+            <label for="bericht">Vertel kort wat er speelt *</label>
+            <textarea id="bericht" name="bericht" placeholder="Wat is je situatie? Waar loop je tegenaan?" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-lime btn-lg" style="width: 100%; justify-content: center;">
+            Verstuur bericht &rarr;
+          </button>
+
+          <p style="color: var(--grijs); font-size: 0.8rem; text-align: center; margin-top: -0.4rem;">
+            Geen spam. Geen verplichtingen. We nemen binnen 1 werkdag contact op.
+          </p>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <div class="succes-icoon">&#10003;</div>
+          <h3 style="color: var(--lime);">Bericht ontvangen!</h3>
+          <p>We nemen zo snel mogelijk contact met je op — uiterlijk binnen 1 werkdag.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="sectie sectie--zand" style="padding: 3rem 2rem;">
+    <div class="container" style="text-align: center;">
+      <p style="font-size: 1.1rem; font-weight: 600; color: var(--donker); max-width: 540px; margin: 0 auto;">
+        "Wij zijn geen bureau dat een pakket verkoopt. Wij kijken wat er écht speelt en bouwen dan iets wat werkt."
+      </p>
+      <p style="color: var(--grijs); font-size: 0.88rem; margin-top: 0.8rem;">— M'PLOY</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div>
+        <div class="footer__logo">M'PLOY</div>
+        <p class="footer__sub">Slim vinden. Echt binden.<br>Arbeidsmarktcommunicatie voor logistiek &amp; maakindustrie.</p>
+      </div>
+      <nav class="footer__nav">
+        <a href="personeel-vinden.html">Personeel vinden</a>
+        <a href="werkgeversmerk-bouwen.html">Werkgeversmerk bouwen</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">
+      &copy; 2024 M'PLOY — Hire right!
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function verstuurForm(e) {
+      e.preventDefault();
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
