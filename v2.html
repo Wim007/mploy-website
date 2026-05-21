@@ -3,9 +3,128 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="M'PLOY bouwt het systeem waarmee de juiste mensen jouw bedrijf vinden, kiezen en blijven." />
-  <title>M'PLOY - Één systeem. Structureel resultaat.</title>
+  <meta name="description" content="M'PLOY bouwt geen losse recruitmentcampagne, maar een wervingssysteem vanuit jouw bedrijf." />
+  <title>M'PLOY - Van vacaturestress naar betrouwbare instroom.</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Accordion */
+    .accordion-groep {
+      max-width: var(--max-breedte);
+      margin: 2.4rem auto 0;
+    }
+    .accordion-item {
+      border-bottom: 1px solid #2e2e2e;
+    }
+    .accordion-item:first-child {
+      border-top: 1px solid #2e2e2e;
+    }
+    .accordion-knop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 1.1rem 0;
+      background: none;
+      border: none;
+      color: var(--zand);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: left;
+      cursor: pointer;
+      gap: 1rem;
+      transition: color 0.15s;
+    }
+    .accordion-knop:hover { color: var(--lime); }
+    .accordion-knop.actief { color: var(--lime); }
+    .accordion-pijl {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border: 2px solid currentColor;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      font-weight: 700;
+      transition: transform 0.2s;
+    }
+    .accordion-knop.actief .accordion-pijl {
+      transform: rotate(45deg);
+    }
+    .accordion-inhoud {
+      display: none;
+      padding: 0 0 1.4rem;
+      color: var(--grijs-licht);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      max-width: 680px;
+    }
+    .accordion-inhoud.open { display: block; }
+    .accordion-inhoud ul {
+      margin-top: 0.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .accordion-inhoud ul li {
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .accordion-inhoud ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--lime);
+    }
+    /* Stap met accordion */
+    .stap .accordion-groep { margin: 0.8rem 0 0; }
+    .stap .accordion-item { border-color: #3a3a3a; }
+    .stap .accordion-item:first-child { border-top: 1px solid #3a3a3a; }
+    .stap .accordion-knop {
+      font-size: 0.88rem;
+      color: var(--grijs-licht);
+      padding: 0.7rem 0;
+    }
+    .stap .accordion-inhoud { font-size: 0.88rem; }
+    /* Cijfers balk */
+    .cijfers-balk {
+      display: flex;
+      gap: 2.4rem;
+      flex-wrap: wrap;
+      max-width: var(--max-breedte);
+      margin: 0 auto 2.4rem;
+    }
+    .cijfer-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .cijfer-item__getal {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--lime);
+      line-height: 1;
+    }
+    .cijfer-item__label {
+      font-size: 0.82rem;
+      color: var(--grijs-licht);
+      max-width: 160px;
+      line-height: 1.4;
+    }
+    /* Sectie zand: accordion donker */
+    .sectie--zand .accordion-item { border-color: #d8d4cb; }
+    .sectie--zand .accordion-item:first-child { border-top: 1px solid #d8d4cb; }
+    .sectie--zand .accordion-knop { color: var(--donker); }
+    .sectie--zand .accordion-knop:hover,
+    .sectie--zand .accordion-knop.actief { color: var(--olijf); }
+    .sectie--zand .accordion-inhoud { color: var(--grijs); }
+  </style>
 </head>
 <body>
 
@@ -36,10 +155,10 @@
     <div class="hero__kicker">
       <span class="label">Arbeidsmarktcommunicatie voor logistiek &amp; maakindustrie</span>
     </div>
-    <h1>Stop met jagen.<br><span class="lime">Bouw een systeem.</span></h1>
+    <h1>Van vacaturestress<br><span class="lime">naar betrouwbare instroom.</span></h1>
     <p class="hero__sub">
-      M'PLOY helpt bedrijven structureel de juiste mensen aantrekken én behouden.
-      Geen losse campagne. Geen tijdelijk traject. Een machine die blijft werken.
+      Geen losse campagne. Wel een systeem.<br>
+      Persoonlijk aan de voorkant. Meetbaar aan de achterkant.
     </p>
     <div class="hero__acties">
       <a href="contact.html" class="btn btn-lime btn-lg">Laten we kijken wat er speelt</a>
@@ -53,15 +172,62 @@
       <div class="sectie__kop">
         <span class="label">Herkenbaar?</span>
         <div class="divisor"></div>
-        <h2>Dit zien we bij bijna elk bedrijf in de sector.</h2>
+        <h2>Dit kost je meer dan je denkt.</h2>
       </div>
-      <ul class="kruis-lijst">
-        <li>Vacatures staan maanden open terwijl het team overbelast raakt</li>
-        <li>Reacties komen binnen, maar de match klopt niet</li>
-        <li>Je trekt mensen aan, maar ze vertrekken sneller dan ze instromen</li>
-        <li>Recruitment is afhankelijk van toeval, bureaus of netwerk</li>
-        <li>Elke vacature voelt als opnieuw beginnen</li>
-      </ul>
+
+      <div class="cijfers-balk">
+        <div class="cijfer-item">
+          <span class="cijfer-item__getal">21.000</span>
+          <span class="cijfer-item__label">euro kost een mismatch minimaal</span>
+        </div>
+        <div class="cijfer-item">
+          <span class="cijfer-item__getal">1-3x</span>
+          <span class="cijfer-item__label">maandsalaris kost een vacature die te lang openstaat</span>
+        </div>
+        <div class="cijfer-item">
+          <span class="cijfer-item__getal">Nu</span>
+          <span class="cijfer-item__label">zoeken werkgevers actief naar talent. Talent kiest niet vanzelf voor jou.</span>
+        </div>
+      </div>
+
+      <div class="accordion-groep">
+        <div class="accordion-item">
+          <button class="accordion-knop" onclick="toggleAccordion(this)">
+            Vacatures blijven te lang openstaan
+            <span class="accordion-pijl">+</span>
+          </button>
+          <div class="accordion-inhoud">
+            <p>Elke dag dat een vacature openstaat kost productiecapaciteit, verhoogt de druk op het team en vergroot de kans dat goede kandidaten afhaken. Gemiddeld kost een langdurig openstaande vacature 1 tot 3 maandsalarissen aan directe en indirecte kosten.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-knop" onclick="toggleAccordion(this)">
+            Reacties komen binnen, maar de match klopt niet
+            <span class="accordion-pijl">+</span>
+          </button>
+          <div class="accordion-inhoud">
+            <p>Veel bedrijven krijgen wel reacties, maar niet van de juiste mensen. Dat kost tijd aan cv-screening, gesprekken en afwijzingen. Uiteindelijk leidt het tot haastige keuzes en een grotere kans op een mismatch. Een mismatch kost minimaal 21.000 euro per persoon.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-knop" onclick="toggleAccordion(this)">
+            Kandidaten haken af door trage opvolging
+            <span class="accordion-pijl">+</span>
+          </button>
+          <div class="accordion-inhoud">
+            <p>Goede kandidaten kiezen sneller voor werkgevers die duidelijker en sneller zijn. Als jij te langzaam reageert, is iemand anders ze al voor. Dat is geen toeval. Dat is een systeemprobleem.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-knop" onclick="toggleAccordion(this)">
+            Afhankelijkheid van dure bureaus blijft
+            <span class="accordion-pijl">+</span>
+          </button>
+          <div class="accordion-inhoud">
+            <p>Je koopt tijdelijke oplossingen, maar bouwt geen eigen instroom op. Elk nieuw bureau kost geld en tijd. Het resultaat is hetzelfde: geen systeem, geen grip, geen voorspelbaarheid.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -69,107 +235,305 @@
   <section class="sectie sectie--donker verborgen">
     <div class="container">
       <div class="sectie__kop">
-        <span class="label">Wat er dan gebeurt</span>
+        <span class="label">Als er niets verandert</span>
         <div class="divisor"></div>
-        <h2>Zolang er geen systeem is, blijf je brandjes blussen.</h2>
-        <p>
-          Recruitment blijft losstaand. HR blust, leidinggevenden improviseren,
-          en ondertussen loopt de druk op. Niet omdat mensen niet willen,
-          omdat er geen fundament is waarop het kan werken.
-        </p>
+        <h2>Recruitment blijft brandjes blussen.</h2>
       </div>
-      <blockquote class="quote-blok">
-        "De bedrijven die het goed doen in logistiek en productie zijn niet per se de grootste.
-        Ze zijn de meest aantrekkelijke werkgever in hun regio. Dat bouw je. Dat overkomt je niet."
-      </blockquote>
+
+      <div class="accordion-groep">
+        <div class="accordion-item">
+          <button class="accordion-knop" onclick="toggleAccordion(this)">
+            Capaciteit blijft liggen
+            <span class="accordion-pijl">+</span>
+          </button>
+          <div class="accordion-inhoud">
+            <p>Zolang vacatures openstaan, ligt productiecapaciteit stil. Projecten lopen vertraging op. Klanten merken het. Omzet loopt mis.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-knop" onclick="toggleAccordion(this)">
+            Teams raken overbelast
+            <span class="accordion-pijl">+</span>
+          </button>
+          <div class="accordion-inhoud">
+            <p>Het vaste team draait overuren om gaten op te vullen. Dat verhoogt de druk, verlaagt de kwaliteit en vergroot de kans dat ook bestaande mensen vertrekken.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-knop" onclick="toggleAccordion(this)">
+            Elke vacature begint opnieuw
+            <span class="accordion-pijl">+</span>
+          </button>
+          <div class="accordion-inhoud">
+            <p>Geen kandidatenpool. Geen herkenning bij talent in de regio. Geen systeem dat voortbouwt op eerdere acties. Je begint elke keer bij nul.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-knop" onclick="toggleAccordion(this)">
+            Er ontstaat geen voorspelbare instroom
+            <span class="accordion-pijl">+</span>
+          </button>
+          <div class="accordion-inhoud">
+            <p>Zonder systeem blijft recruitment afhankelijk van toeval, netwerk of de beschikbaarheid van bureaus. Dat maakt plannen onmogelijk en groei onzeker.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 2.4rem;">
+        <blockquote class="quote-blok">
+          "De bedrijven die het goed doen in logistiek en productie zijn niet per se de grootste.
+          Ze zijn de meest aantrekkelijke werkgever in hun regio. Dat bouw je. Dat overkomt je niet."
+        </blockquote>
+      </div>
     </div>
   </section>
 
-  <!-- TRANSFORMATIE -->
+  <!-- OPLOSSING -->
   <section class="sectie sectie--zand verborgen">
     <div class="container">
       <div class="sectie__kop">
-        <span class="label">De beweging</span>
+        <span class="label">Het verschil</span>
         <div class="divisor"></div>
-        <h2>Van jagen op mensen naar een bedrijf waar de juiste mensen willen werken én blijven.</h2>
-        <p>
-          Dat is de transformatie. Niet via één campagne of één vacaturetekst,
-          maar via een aanpak die alle onderdelen verbindt: employer branding,
-          recruitment marketing, zichtbaarheid, onboarding, behoud.
-          Als één geheel.
-        </p>
+        <h2>Geen losse campagne. Wel een systeem.</h2>
+        <p>M'PLOY bouwt een wervingssysteem vanuit jouw bedrijf. Jij spreekt alleen de mensen die passen.</p>
       </div>
-      <div class="belofte">
-        <p class="belofte__tekst">Employer branding is geen apart product. Het is de motor achter elk goed recruitment resultaat.</p>
-        <a href="contact.html" class="btn btn-donker">Vertel me hoe dat eruitziet</a>
+
+      <div class="accordion-groep">
+        <div class="accordion-item">
+          <button class="accordion-knop" onclick="toggleAccordion(this)">
+            Wat maakt het een systeem en geen campagne?
+            <span class="accordion-pijl">+</span>
+          </button>
+          <div class="accordion-inhoud">
+            <p>Een campagne stopt. Een systeem niet. We bouwen iets dat blijft draaien: een sterk werkgeversverhaal, kanalen die blijven werken, data die we maandelijks gebruiken om te verbeteren. Geen eenmalige actie. Een fundament.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-knop" onclick="toggleAccordion(this)">
+            Wat bedoel je met persoonlijk aan de voorkant?
+            <span class="accordion-pijl">+</span>
+          </button>
+          <div class="accordion-inhoud">
+            <p>Echte mensen. Echte verhalen. Echte werkvloer. Geen gladde marketingvideo. Kandidaten kiezen niet alleen voor een baan, maar voor een bedrijf dat klopt. Dat gevoel begint al bij de eerste indruk.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-knop" onclick="toggleAccordion(this)">
+            Wat bedoel je met meetbaar aan de achterkant?
+            <span class="accordion-pijl">+</span>
+          </button>
+          <div class="accordion-inhoud">
+            <p>We meten bereik, klikken, reacties, kwaliteit van sollicitanten en hires. Elke maand weet je wat werkt en wat niet. Dat sturen we bij. Geen buikgevoel. Gewoon cijfers.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 2.4rem;">
+        <div class="belofte">
+          <p class="belofte__tekst">Van vacaturestress naar een bedrijf waar de juiste mensen willen werken en blijven.</p>
+          <a href="contact.html" class="btn btn-donker">Vertel me hoe dat eruitziet</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SYSTEEM / METHODE -->
+  <!-- SYSTEEM -->
   <section class="sectie sectie--donker verborgen" id="systeem">
     <div class="container">
       <div class="sectie__kop">
         <span class="label">Hoe het werkt</span>
         <div class="divisor"></div>
-        <h2>Zes onderdelen. Eén geïntegreerd systeem.</h2>
+        <h2>Vijf stappen. Eén geintegreerd systeem.</h2>
         <p>Geen los advies. Geen losse campagnes. Alles werkt samen.</p>
       </div>
       <div class="stappen-grid">
+
         <div class="stap verborgen">
           <div class="stap__nr">01</div>
-          <h3>Employer branding</h3>
-          <p>We bouwen het verhaal dat klopt. Waarom werken mensen bij jou? Wat maakt jouw bedrijf de juiste keuze voor de mensen die je zoekt?</p>
+          <h3>Verhaal scherp krijgen</h3>
+          <p>Waarom werken mensen bij jou? Waarom blijven ze? Wie past wel en wie niet?</p>
+          <div class="accordion-groep">
+            <div class="accordion-item">
+              <button class="accordion-knop" onclick="toggleAccordion(this)">
+                Wat doen we hier precies?
+                <span class="accordion-pijl">+</span>
+              </button>
+              <div class="accordion-inhoud">
+                <p>We gaan in gesprek met mensen op de vloer, leidinggevenden en nieuwe medewerkers. Wat trekt mensen aan? Wat houdt ze? Dat wordt de basis van alles: teksten, beelden, campagnes.</p>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="stap verborgen">
           <div class="stap__nr">02</div>
-          <h3>Recruitment marketing</h3>
-          <p>We brengen het verhaal naar de juiste mensen, via de kanalen waar ze zijn, met content die ze herkennen en die aanzet tot actie.</p>
+          <h3>Zichtbaar maken</h3>
+          <p>Echte mensen. Echte verhalen. Echte werkvloer. Geen gladde marketingvideo.</p>
+          <div class="accordion-groep">
+            <div class="accordion-item">
+              <button class="accordion-knop" onclick="toggleAccordion(this)">
+                Hoe ziet dat eruit in de praktijk?
+                <span class="accordion-pijl">+</span>
+              </button>
+              <div class="accordion-inhoud">
+                <p>Video's van medewerkers die vertellen wat ze doen en waarom ze blijven. Foto's van de werkvloer zoals die echt is. Teksten die herkenbaar zijn voor de mensen die jij zoekt. Geen stockfotos. Geen pr-taal.</p>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="stap verborgen">
           <div class="stap__nr">03</div>
-          <h3>Campagnes &amp; zichtbaarheid</h3>
-          <p>Gerichte campagnes die je naam versterken in de regio en de sector. Niet breed schieten, maar raak zijn.</p>
+          <h3>Kandidaten aantrekken</h3>
+          <p>Niet alleen actieve zoekers. Ook mensen die nu ergens anders werken maar openstaan voor beter.</p>
+          <div class="accordion-groep">
+            <div class="accordion-item">
+              <button class="accordion-knop" onclick="toggleAccordion(this)">
+                Hoe bereiken we die mensen?
+                <span class="accordion-pijl">+</span>
+              </button>
+              <div class="accordion-inhoud">
+                <p>Via gerichte campagnes op de kanalen waar jouw doelgroep is. We richten ons op de regio, de sector en het type profiel. Zo bereiken we ook mensen die niet actief zoeken maar wel openstaan voor een stap.</p>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="stap verborgen">
           <div class="stap__nr">04</div>
-          <h3>Selectie &amp; instroom</h3>
-          <p>Betere match aan de voorkant betekent minder uitval later. We helpen de funnel zo inrichten dat de juiste mensen ook daadwerkelijk binnenkomen.</p>
+          <h3>Slimmer kwalificeren</h3>
+          <p>Geen bak losse reacties. Snel zien wie serieus is, wie past bij het werk en wie beter niet gesproken hoeft te worden.</p>
+          <div class="accordion-groep">
+            <div class="accordion-item">
+              <button class="accordion-knop" onclick="toggleAccordion(this)">
+                Hoe werkt dat in de praktijk?
+                <span class="accordion-pijl">+</span>
+              </button>
+              <div class="accordion-inhoud">
+                <p>We gebruiken slimme vragenlijsten en vooraf bepaalde criteria om snel te zien wie de moeite waard is. Jij spreekt alleen de mensen die passen. Dat scheelt tijd en voorkomt teleurstellingen aan beide kanten.</p>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="stap verborgen">
           <div class="stap__nr">05</div>
-          <h3>Onboarding &amp; eerste weken</h3>
-          <p>De eerste 90 dagen bepalen of iemand blijft. We helpen die periode zo inrichten dat nieuwe mensen landen en blijven.</p>
+          <h3>Blijven verbeteren</h3>
+          <p>Bereik, klikken, reacties, kwaliteit, hires. We meten alles en sturen maandelijks bij.</p>
+          <div class="accordion-groep">
+            <div class="accordion-item">
+              <button class="accordion-knop" onclick="toggleAccordion(this)">
+                Wat levert dat op?
+                <span class="accordion-pijl">+</span>
+              </button>
+              <div class="accordion-inhoud">
+                <p>Het systeem wordt maand na maand sterker. Meer grip op kosten, kandidaten en hires. Minder afhankelijkheid van bureaus. Een voorspelbare instroom in plaats van brandjes blussen.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="stap verborgen">
-          <div class="stap__nr">06</div>
-          <h3>Behoud &amp; optimalisatie</h3>
-          <p>Het systeem stopt niet na de aanname. We meten, verbeteren en blijven ondersteunen zodat de machine blijft draaien.</p>
-        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- DOORLOPENDE SAMENWERKING -->
+  <!-- VOOR WIE -->
   <section class="sectie sectie--donker-zacht verborgen">
     <div class="container">
       <div class="sectie__kop">
-        <span class="label">Geen eenmalig traject</span>
+        <span class="label">Voor wie</span>
         <div class="divisor"></div>
-        <h2>M'PLOY blijft. Dat is het verschil.</h2>
-        <p>
-          Arbeidsmarktcommunicatie werkt cumulatief. Hoe langer je consistent aanwezig bent,
-          hoe sterker je positie, en hoe makkelijker het wordt om de juiste mensen te vinden en te houden.
-          Daarom werken we doorlopend samen.
-        </p>
+        <h2>Bedrijven waar personeelskrapte direct pijn doet.</h2>
+        <p>In de planning, op de vloer, bij klanten en in groei.</p>
       </div>
       <ul class="check-lijst">
-        <li>Maandelijkse optimalisatie van campagnes en kanalen</li>
-        <li>Structureel inzicht in wat werkt en wat niet</li>
-        <li>Snelle bijsturing bij veranderingen in de markt of organisatie</li>
-        <li>Eén aanspreekpunt dat jouw bedrijf door en door kent</li>
-        <li>Geen opnieuw beginnen, voortbouwen op wat al werkt</li>
+        <li>Logistiek: distributie, transport, magazijn en supply chain</li>
+        <li>Productie: maakindustrie, assemblage en technische functies</li>
+        <li>Industrie: bedrijven die groeien maar de mensen niet kunnen vinden</li>
+        <li>Werkgevers die klaar zijn om te stoppen met tijdelijke oplossingen</li>
       </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sectie sectie--donker verborgen">
+    <div class="container">
+      <div class="sectie__kop">
+        <span class="label">Vragen</span>
+        <div class="divisor"></div>
+        <h2>Wat je misschien denkt.</h2>
+      </div>
+      <div class="accordion-groep">
+        <div class="accordion-item">
+          <button class="accordion-knop" onclick="toggleAccordion(this)">
+            Bereiken we de juiste mensen online wel?
+            <span class="accordion-pijl">+</span>
+          </button>
+          <div class="accordion-inhoud">
+            <p>Ja. Meer dan 80% van het werkende personeel in logistiek en productie gebruikt dagelijks sociale media. Het gaat niet om of ze er zijn, maar hoe je ze bereikt. Dat is precies wat we bouwen.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-knop" onclick="toggleAccordion(this)">
+            We hebben al advertenties geprobeerd. Dat werkte niet.
+            <span class="accordion-pijl">+</span>
+          </button>
+          <div class="accordion-inhoud">
+            <p>Losse advertenties zonder sterk werkgeversverhaal werken inderdaad niet goed. Het verschil is dat we beginnen bij het verhaal. Eerst begrijpen we waarom mensen bij jou willen werken. Dan pas adverteren we.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-knop" onclick="toggleAccordion(this)">
+            We hebben nu mensen nodig. Is dit niet te langzaam?
+            <span class="accordion-pijl">+</span>
+          </button>
+          <div class="accordion-inhoud">
+            <p>Een systeem opbouwen kost tijd. Maar we starten altijd met een snelle analyse en directe actie op de meest urgente vacatures. Zo lossen we het acute probleem op en bouwen we tegelijk aan de lange termijn.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-knop" onclick="toggleAccordion(this)">
+            Wat als wij niet zo bijzonder zijn?
+            <span class="accordion-pijl">+</span>
+          </button>
+          <div class="accordion-inhoud">
+            <p>Elk bedrijf heeft iets dat mensen aantrekt. Vaak zie je het zelf niet meer, omdat je er elke dag middenin zit. Wij helpen dat te ontdekken en zichtbaar te maken. Geen verzinsel. Gewoon het echte verhaal.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-knop" onclick="toggleAccordion(this)">
+            We hebben al een recruiter. Werkt dit naast elkaar?
+            <span class="accordion-pijl">+</span>
+          </button>
+          <div class="accordion-inhoud">
+            <p>Ja. Wij bouwen de instroom. Jullie recruiter doet de gesprekken en selectie. We versterken elkaar. De recruiter hoeft geen tijd meer te steken in het genereren van bekendheid en aantrekkingskracht.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-knop" onclick="toggleAccordion(this)">
+            We hebben hier zelf geen tijd voor.
+            <span class="accordion-pijl">+</span>
+          </button>
+          <div class="accordion-inhoud">
+            <p>Dat is precies waarom we dit voor je doen. We ontzorgen volledig. Jij geeft richting en goedkeuring. De uitvoering, optimalisatie en rapportage doen wij.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-knop" onclick="toggleAccordion(this)">
+            Wat levert dit ons concreet op?
+            <span class="accordion-pijl">+</span>
+          </button>
+          <div class="accordion-inhoud">
+            <ul>
+              <li>Meer en betere sollicitanten</li>
+              <li>Minder stress bij open vacatures</li>
+              <li>Meer grip op kosten, kandidaten en hires</li>
+              <li>Minder afhankelijkheid van externe bureaus</li>
+              <li>Een systeem dat blijft draaien, ook als de markt verandert</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -197,10 +561,7 @@
   <section class="cta-sectie verborgen">
     <div class="container">
       <h2>Klaar om te stoppen met jagen?</h2>
-      <p>
-        We kijken eerst wat er écht speelt in jouw organisatie.
-        Geen pitch. Geen verkoopgesprek. Gewoon een eerlijk gesprek.
-      </p>
+      <p>We kijken eerst wat er speelt in jouw organisatie. Geen pitch. Gewoon een eerlijk gesprek.</p>
       <a href="contact.html" class="btn btn-lime btn-lg">Plan een gesprek</a>
     </div>
   </section>
@@ -225,5 +586,22 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    function toggleAccordion(knop) {
+      var inhoud = knop.nextElementSibling;
+      var isOpen = inhoud.classList.contains('open');
+      var groep = knop.closest('.accordion-groep');
+      groep.querySelectorAll('.accordion-inhoud').forEach(function(el) {
+        el.classList.remove('open');
+      });
+      groep.querySelectorAll('.accordion-knop').forEach(function(el) {
+        el.classList.remove('actief');
+      });
+      if (!isOpen) {
+        inhoud.classList.add('open');
+        knop.classList.add('actief');
+      }
+    }
+  </script>
 </body>
 </html>
