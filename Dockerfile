@@ -1,9 +1,9 @@
-FROM nginx:alpine
+FROM node:18-alpine
 
-COPY . /usr/share/nginx/html
-COPY nginx.conf.template /etc/nginx/conf.d/default.conf.template
-COPY entrypoint.sh /entrypoint.sh
+WORKDIR /app
 
-RUN chmod +x /entrypoint.sh
+COPY . .
 
-CMD ["/entrypoint.sh"]
+RUN npm install -g serve
+
+CMD sh -c "serve -s . -l ${PORT:-3000}"
