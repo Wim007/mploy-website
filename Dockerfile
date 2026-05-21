@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm install -g serve@14
+RUN npm install -g http-server
 
-CMD sh -c "serve -s . -l tcp://0.0.0.0:${PORT:-3000}"
+CMD sh -c "http-server . -p ${PORT:-3000} -a 0.0.0.0"
